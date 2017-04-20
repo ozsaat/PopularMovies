@@ -2,6 +2,8 @@ package com.osaat.popularmovies.data;
 
 import android.util.Log;
 
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -14,23 +16,32 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieDBClient {
 
-    private static final String API_KEY = "Your key";
+    private static final String API_KEY = "API key";
     //TODO add key
     private static final String BASE_URL = "http://api.themoviedb.org/3/";
     private static Retrofit retrofit = null;
     private MovieDbApi movieDbApi;
 
     public MovieDBClient() {
+
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(BASE_URL)
+                .client(client)
                 .build();
 
         movieDbApi = retrofit.create(MovieDbApi.class);
     }
 
     public void getPopularMovies(final Listener listener) {
-        Call<MovieResponse> call = movieDbApi.getPopularMovies("en", "popularity.desc", API_KEY);
+//        Call<MovieResponse> call = movieDbApi.getPopularMovies("en", "popularity.desc", API_KEY);
+        Call<MovieResponse> call = movieDbApi.getHighestRatedMovie("500", "en", "vote_average.desc", API_KEY);
+//        Call<MovieResponse> call = movieDbApi.getHighestRatedMovie(API_KEY);
+
         call.enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {

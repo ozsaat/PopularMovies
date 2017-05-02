@@ -1,5 +1,5 @@
 
-~squid:S1488"bImmediately return this expression instead of assigning it to the temporary variable "viewHolder".(õ¯ñ8Ÿ•ìµ¶+
+.squid:S2176"Rename this class.(¯ôšÔ8ÏÖ©†¸+
 bsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(óğÍûÿÿÿÿ8»½ş‹¶+
 Hsquid:S1068",Remove this unused "cardView" private field.(ö¼§Ñ8»½ş‹¶+
-.squid:S2176"Rename this class.(¯ôšÔ8ÏÖ©†¸+
+~squid:S1488"bImmediately return this expression instead of assigning it to the temporary variable "viewHolder".(õ¯ñ8Ÿ•ìµ¶+

@@ -1,9 +1,10 @@
 
 tsquid:S1450"XRemove the "mActivity" field and declare it as a local variable in the relevant methods.(ïĞÔ’8¹…‹Œ¶+
-bsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(óğÍûÿÿÿÿ8¹…‹Œ¶+
-squid:S1450"^Remove the "mRelativeLayout" field and declare it as a local variable in the relevant methods.(¦Œß¤ùÿÿÿÿ8¹…‹Œ¶+
-}squid:S1450"\Remove the "movieDBClient" field and declare it as a local variable in the relevant methods.(‰Ôã–øÿÿÿÿ8¹…‹Œ¶+
-Tsquid:S1068"3Remove this unused "mRelativeLayout" private field.(¦Œß¤ùÿÿÿÿ8¹…‹Œ¶+
 ysquid:S1450"]Remove the "mLayoutManager" field and declare it as a local variable in the relevant methods.(¡¾•Ÿ8¹…‹Œ¶+
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(øå´¡ÿÿÿÿÿ8…ú¤»+
+bsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(óğÍûÿÿÿÿ8¹…‹Œ¶+
+}squid:S1450"\Remove the "movieDBClient" field and declare it as a local variable in the relevant methods.(‰Ôã–øÿÿÿÿ8¹…‹Œ¶+
 }squid:S1450"\Remove the "mRecyclerView" field and declare it as a local variable in the relevant methods.(Òéıÿÿÿÿ8°³¤Œ¶+
 Isquid:S1068"-Remove this unused "mActivity" private field.(ïĞÔ’8¹…‹Œ¶+
+Tsquid:S1068"3Remove this unused "mRelativeLayout" private field.(¦Œß¤ùÿÿÿÿ8¹…‹Œ¶+
+squid:S1450"^Remove the "mRelativeLayout" field and declare it as a local variable in the relevant methods.(¦Œß¤ùÿÿÿÿ8¹…‹Œ¶+

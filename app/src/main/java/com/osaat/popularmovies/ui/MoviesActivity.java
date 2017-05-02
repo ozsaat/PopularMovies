@@ -7,9 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -17,26 +16,22 @@ import com.osaat.popularmovies.R;
 import com.osaat.popularmovies.data.Movie;
 import com.osaat.popularmovies.data.MovieDBClient;
 import com.osaat.popularmovies.data.MovieResponse;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MoviesActivity extends AppCompatActivity {
 
+    public static final String POSTER_PATH = "http://image.tmdb.org/t/p/w342//";
     private Context mContext;
     private Activity mActivity;
-
     private RelativeLayout mRelativeLayout;
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private MovieAdapter mAdapter;
-
     private MovieDBClient movieDBClient;
-//    private Button dummyButton;
+    //    private Button dummyButton;
     private List<Movie> mMovie;
-
-    public static final String POSTER_PATH = "http://image.tmdb.org/t/p/w342//";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,8 +109,60 @@ public class MoviesActivity extends AppCompatActivity {
 //                });
 
 
-            }
-//        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.popular:
+                item.setChecked(true);
+                movieDBClient.getPopularMovies(new MovieDBClient.Listener() {
+
+                    @Override
+                    public void onResponse(MovieResponse movieResponse) {
+                        List<Movie> movies = movieResponse.getResults();
+                        mMovie = movies;
+
+                        mAdapter.setData(movies);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        Toast.makeText(mContext, "Error " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+                break;
+            case R.id.highest:
+                item.setChecked(true);
+                movieDBClient.getHighestRatedMovies(new MovieDBClient.Listener() {
+
+                    @Override
+                    public void onResponse(MovieResponse movieResponse) {
+                        List<Movie> movies = movieResponse.getResults();
+                        mMovie = movies;
+
+                        mAdapter.setData(movies);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        Toast.makeText(mContext, "Error " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+                break;
+
+        }
+        return true;
+    }
+
+    //        });
 //    }
 
 //    @Override

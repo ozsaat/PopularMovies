@@ -7,7 +7,7 @@ import retrofit2.http.Query;
 
 public interface MovieDbApi {
 
-    public static final String API_KEY = "API key";
+    public static final String API_KEY = "Your key";
     //TODO add key
     public static final String BASE_URL = "http://api.themoviedb.org/3/";
     public static final String GET_POPULAR_MOVIES = "http://api.themoviedb.org/3/discover/movie?language=en&sort_by=popularity.desc&api_key=" + API_KEY;

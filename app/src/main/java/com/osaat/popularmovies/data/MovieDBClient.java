@@ -2,6 +2,8 @@ package com.osaat.popularmovies.data;
 
 import android.util.Log;
 
+import com.osaat.popularmovies.ui.MovieAdapter;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -16,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieDBClient {
 
-    private static final String API_KEY = "API key";
+    private static final String API_KEY = "Your key";
     //TODO add key
     private static final String BASE_URL = "http://api.themoviedb.org/3/";
     private static Retrofit retrofit = null;
@@ -38,8 +40,8 @@ public class MovieDBClient {
     }
 
     public void getPopularMovies(final Listener listener) {
-//        Call<MovieResponse> call = movieDbApi.getPopularMovies("en", "popularity.desc", API_KEY);
-        Call<MovieResponse> call = movieDbApi.getHighestRatedMovie("500", "en", "vote_average.desc", API_KEY);
+        Call<MovieResponse> call = movieDbApi.getPopularMovies("en", "popularity.desc", API_KEY);
+//        Call<MovieResponse> call = movieDbApi.getHighestRatedMovie("500", "en", "vote_average.desc", API_KEY);
 //        Call<MovieResponse> call = movieDbApi.getHighestRatedMovie(API_KEY);
 
         call.enqueue(new Callback<MovieResponse>() {
@@ -65,5 +67,25 @@ public class MovieDBClient {
         void onResponse(MovieResponse movieResponse);
 
         void onFailure(Throwable t);
+    }
+
+    public void getHighestRatedMovies(final Listener listener) {
+
+        Call<MovieResponse> call = movieDbApi.getHighestRatedMovie("500", "en", "vote_average.desc", API_KEY);
+        call.enqueue(new Callback<MovieResponse>() {
+            @Override
+            public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
+                MovieResponse movieResponse = response.body();
+
+                listener.onResponse(movieResponse);
+            }
+
+            @Override
+            public void onFailure(Call<MovieResponse> call, Throwable t) {
+                Log.d("XXX", "error");
+
+                listener.onFailure(t);
+            }
+        });
     }
 }

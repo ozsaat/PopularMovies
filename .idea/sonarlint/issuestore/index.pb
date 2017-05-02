@@ -21,3 +21,10 @@ P
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+p
+@app/src/main/java/com/osaat/popularmovies/MoviesApplication.java,5/f/5fec6578e88e7da18b6fb3836acf9e31c763781e
+t
+Dapp/src/main/java/com/osaat/popularmovies/ui/SortDialogFragment.java,2/3/23a632e442fbc6cfc1a9f57a5843a48c480944ab

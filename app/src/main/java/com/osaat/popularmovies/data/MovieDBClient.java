@@ -2,8 +2,6 @@ package com.osaat.popularmovies.data;
 
 import android.util.Log;
 
-import com.osaat.popularmovies.ui.MovieAdapter;
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
@@ -18,10 +16,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieDBClient {
 
-    private static final String API_KEY = "Your Key";
     //TODO add key
+    public static final String BACKDROP_PATH = "http://image.tmdb.org/t/p/w780//";
+    private static final String API_KEY = "Api Key";
     private static final String BASE_URL = "http://api.themoviedb.org/3/";
-    private static Retrofit retrofit = null;
     private MovieDbApi movieDbApi;
 
     public MovieDBClient() {
@@ -41,13 +39,10 @@ public class MovieDBClient {
 
     public void getPopularMovies(final Listener listener) {
         Call<MovieResponse> call = movieDbApi.getPopularMovies("en", "popularity.desc", API_KEY);
-//        Call<MovieResponse> call = movieDbApi.getHighestRatedMovie("500", "en", "vote_average.desc", API_KEY);
-//        Call<MovieResponse> call = movieDbApi.getHighestRatedMovie(API_KEY);
 
         call.enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
-//                Object o = new NetworkCall().doInBackground(call.clone());
                 MovieResponse movieResponse = response.body();
 
                 listener.onResponse(movieResponse);
@@ -60,13 +55,6 @@ public class MovieDBClient {
                 listener.onFailure(t);
             }
         });
-    }
-
-    public interface Listener {
-
-        void onResponse(MovieResponse movieResponse);
-
-        void onFailure(Throwable t);
     }
 
     public void getHighestRatedMovies(final Listener listener) {
@@ -87,5 +75,12 @@ public class MovieDBClient {
                 listener.onFailure(t);
             }
         });
+    }
+
+    public interface Listener {
+
+        void onResponse(MovieResponse movieResponse);
+
+        void onFailure(Throwable t);
     }
 }

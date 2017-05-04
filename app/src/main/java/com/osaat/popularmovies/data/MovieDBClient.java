@@ -18,7 +18,7 @@ public class MovieDBClient {
 
     //TODO add key
     public static final String BACKDROP_PATH = "http://image.tmdb.org/t/p/w780//";
-    private static final String API_KEY = "Api Key";
+    private static final String API_KEY = "API key";
     private static final String BASE_URL = "http://api.themoviedb.org/3/";
     private MovieDbApi movieDbApi;
 

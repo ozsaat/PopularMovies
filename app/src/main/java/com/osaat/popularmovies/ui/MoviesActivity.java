@@ -26,6 +26,7 @@ public class MoviesActivity extends AppCompatActivity {
     private MovieAdapter mAdapter;
     private MovieDBClient movieDBClient;
     private List<Movie> mMovie;
+    private Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,7 @@ public class MoviesActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        this.menu = menu;
         return true;
     }
 
@@ -97,6 +99,8 @@ public class MoviesActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Throwable t) {
                         Toast.makeText(mContext, "Error " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        item.setChecked(false);
+                        menu.findItem(R.id.highest).setChecked(true);
                     }
                 });
                 break;
@@ -115,6 +119,8 @@ public class MoviesActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Throwable t) {
                         Toast.makeText(mContext, "Error " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        item.setChecked(false);
+                        menu.findItem(R.id.popular).setChecked(true);
                     }
                 });
                 break;

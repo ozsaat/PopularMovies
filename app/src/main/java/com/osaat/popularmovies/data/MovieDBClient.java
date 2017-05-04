@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MovieDBClient {
 
-    private static final String API_KEY = "Your key";
+    private static final String API_KEY = "Your Key";
     //TODO add key
     private static final String BASE_URL = "http://api.themoviedb.org/3/";
     private static Retrofit retrofit = null;

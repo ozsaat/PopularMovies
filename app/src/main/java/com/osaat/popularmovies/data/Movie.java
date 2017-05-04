@@ -69,8 +69,8 @@ public class Movie implements Serializable {
         this.overview = overview;
     }
 
-    public Double getVoteAverage() {
-        return voteAverage;
+    public String getVoteAverage() {
+        return voteAverage.toString() + "/10";
     }
 
     public void setVoteAverage(Double voteAverage) {

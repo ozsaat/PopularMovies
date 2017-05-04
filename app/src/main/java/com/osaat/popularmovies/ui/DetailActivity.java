@@ -37,7 +37,7 @@ public class DetailActivity extends AppCompatActivity {
 
         Picasso.with(this)
                 .load(backdrop)
-                .placeholder(R.color.colorPrimary)
+                .placeholder(R.color.placeholder_background)
                 .into(backdropPoster);
 
         binding.setMovie(movie);

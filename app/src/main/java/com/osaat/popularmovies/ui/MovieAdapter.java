@@ -73,7 +73,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         String poster = POSTER_PATH + mDataSet.get(position).getPosterPath();
         Picasso.with(mContext)
                 .load(poster)
-                .placeholder(R.mipmap.ic_launcher)
+                .placeholder(R.color.placeholder_background)
                 .into(holder.imageView);
 //        String movie = mDataSet.get(position).getTitle();
 //        holder.movieTitle.setText(movie);

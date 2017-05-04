@@ -2,4 +2,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="image_width">150dp</dimen>
     <dimen name="image_height">150dp</dimen>
+
+    <dimen name="padding_bottom">16dp</dimen>
 </resources>

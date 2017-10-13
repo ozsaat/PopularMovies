@@ -4,16 +4,13 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-/**
- * Created by osaat on 31/03/2017.
- */
 
-public class MovieResponse {
+public class MovieResponse<T> {
 
         @SerializedName("page")
         private int page;
         @SerializedName("results")
-        private List<Movie> results;
+        private List<T> results;
         @SerializedName("total_results")
         private int totalResults;
         @SerializedName("total_pages")
@@ -23,7 +20,7 @@ public class MovieResponse {
             return page;
         }
 
-        public List<Movie> getResults() {
+        public List<T> getResults() {
             return results;
         }
 

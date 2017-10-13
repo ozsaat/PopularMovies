@@ -1,3 +1,10 @@
 
-Asquid:S1068",Remove this unused "retrofit" private field.(Š¢Ú½
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ƒäýýÿÿÿÿ8ä«®îÇ+
+fsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ªò=8¬ô„éÇ+
 Nsquid:S1135"2Complete the task associated to this TODO comment.(ƒõø¢8¡ÉÐ¥»+
+rsquid:UselessImportCheck"DRemove this unused import 'com.osaat.popularmovies.ui.MovieAdapter'.(¢ð˜Ýýÿÿÿÿ8ò‹”éÇ+
+bsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(Ê«÷ëýÿÿÿÿ8ÀËõœ½+
+Esquid:S1068")Remove this unused "movie" private field.(ã´¥Ï8å¢’æÇ+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.( ©èœúÿÿÿÿ8ä«®îÇ+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(§Æã´8ä«®îÇ+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ä¸Ù8ä«®îÇ+

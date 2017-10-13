@@ -30,14 +30,21 @@
 
         <activity
             android:name=".ui.DetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/title_activity_detail"
             android:parentActivityName=".ui.MoviesActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
             android:theme="@style/DarkTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.osaat.popularmovies.ui.MoviesActivity" />
         </activity>
+        <activity android:name=".ui.FavoritesActivity"></activity>
+
+        <provider
+            android:name=".data.FavouritesContentProvider"
+            android:authorities="${applicationId}.data.FavouritesContentProvider"
+            android:exported="false" />
+
     </application>
 
 </manifest>

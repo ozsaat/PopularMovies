@@ -1,47 +1,35 @@
 package com.osaat.popularmovies.data;
 
-import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.Required;
 
-public class Movie implements Serializable {
+public class FavoriteMovies extends RealmObject {
 
-    @SerializedName("id")
-    private String id;
-
-    @SerializedName("title")
+    @PrimaryKey
+    private int id;
+    @Required
     private String title;
-
-    @SerializedName("poster_path")
+    @Required
     private String posterPath;
-
-    @SerializedName("release_date")
+    @Required
     private String releaseDate;
-
-    @SerializedName("overview")
+    @Required
     private String overview;
-
-    @SerializedName("vote_average")
+    @Required
     private Double voteAverage;
-
-    @SerializedName("backdrop_path")
+    @Required
     private String backdropPath;
 
-    public Movie(String id, String title, String posterPath, String releaseDate, String overview, Double voteAverage, String backdropPath) {
-        this.id = id;
-        this.posterPath = posterPath;
-        this.title = title;
-        this.releaseDate = releaseDate;
-        this.overview = overview;
-        this.voteAverage = voteAverage;
-        this.backdropPath = backdropPath;
+    public FavoriteMovies() {
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -77,8 +65,8 @@ public class Movie implements Serializable {
         this.overview = overview;
     }
 
-    public String getVoteAverage() {
-        return voteAverage.toString() + "/10";
+    public Double getVoteAverage() {
+        return voteAverage;
     }
 
     public void setVoteAverage(Double voteAverage) {
@@ -92,5 +80,6 @@ public class Movie implements Serializable {
     public void setBackdropPath(String backdropPath) {
         this.backdropPath = backdropPath;
     }
-    
+
+
 }

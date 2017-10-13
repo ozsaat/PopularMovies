@@ -1,0 +1,14 @@
+
+Z"squid:SwitchLastCaseIsDefaultCheck""Add a default case to this switch.(Ò“ÿšùÿÿÿÿ8ÅÀ‚çÇ+
+osquid:S1450"SRemove the "menu" field and declare it as a local variable in the relevant methods.(î·öÁ8ç¢’æÇ+
+}squid:S1450"\Remove the "movieDBClient" field and declare it as a local variable in the relevant methods.(‰Ôã–øÿÿÿÿ8ğêÄíÇ+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(œ›Ë8ÅÀ‚çÇ+
+Gsquid:S1068",Remove this unused "trailers" private field.(â©û`8üÌ«æÇ+
+Dsquid:S1068"(Remove this unused "menu" private field.(î·öÁ8ñŸ®éÇ+
+Msquid:S1172",Remove this unused method parameter "movie".(š«©şÿÿÿÿ8ÅÀ‚çÇ+
+lsquid:S1301"KReplace this "switch" statement by "if" statements to increase readability.(Ò“ÿšùÿÿÿÿ8ÅÀ‚çÇ+
+Gsquid:S1068"+Remove this unused "reviews" private field.(«°¼Õ8ÈÖ™æÇ+
+osquid:MaximumInheritanceDepth"<This class has 8 parents which is greater than 5 authorized.(îÆÇĞüÿÿÿÿ8éüôÃ+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(š«©şÿÿÿÿ8ÅÀ‚çÇ+
+psquid:S1450"TRemove the "movie" field and declare it as a local variable in the relevant methods.(ã´¥Ï8ç¢’æÇ+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¦ŒÇˆûÿÿÿÿ8ÅÀ‚çÇ+

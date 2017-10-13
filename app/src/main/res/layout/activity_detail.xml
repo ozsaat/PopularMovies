@@ -1,4 +1,6 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.osaat.popularmovies.ui.DetailActivity">
 
     <data>
 
@@ -31,28 +33,36 @@
                 android:text="@{movie.title}"
                 android:textColor="#ffffff"
                 android:textSize="30sp"
-                android:paddingBottom="@dimen/padding_bottom"/>
+                android:paddingBottom="@dimen/padding_bottom"
+                android:paddingStart="@dimen/detail_margin_left"
+                android:paddingEnd="@dimen/detail_margin_left"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#ffffff"
                 android:text="@string/release_date"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:paddingStart="@dimen/detail_margin_left"
+                android:paddingEnd="@dimen/detail_margin_left"/>
 
             <TextView
                 android:id="@+id/release_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{movie.releaseDate}"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:paddingStart="@dimen/detail_margin_left"
+                android:paddingEnd="@dimen/detail_margin_left"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#ffffff"
                 android:text="@string/vote_average"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:paddingStart="@dimen/detail_margin_left"
+                android:paddingEnd="@dimen/detail_margin_left"/>
 
             <TextView
                 android:id="@+id/vote_average"
@@ -60,22 +70,43 @@
                 android:layout_height="wrap_content"
                 android:text="@{String.valueOf(movie.voteAverage)}"
                 android:textSize="18sp"
-                android:paddingBottom="@dimen/padding_bottom"/>
+                android:paddingBottom="@dimen/padding_bottom"
+                android:paddingStart="@dimen/detail_margin_left"
+                android:paddingEnd="@dimen/detail_margin_left"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/movie_summary"
                 android:textColor="#ffffff"
-                android:textSize="26sp"/>
+                android:textSize="26sp"
+                android:paddingStart="@dimen/detail_margin_left"
+                android:paddingEnd="@dimen/detail_margin_left"/>
 
             <TextView
                 android:id="@+id/overview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{movie.overview}" />
+                android:text="@{movie.overview}"
+                android:paddingStart="@dimen/detail_margin_left"
+                android:paddingEnd="@dimen/detail_margin_left"/>
+
+            <TextView
+                android:id="@+id/reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/detail_margin_left"
+                android:paddingEnd="@dimen/detail_margin_left"/>
+
+            <TextView
+                android:id="@+id/trailers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/detail_margin_left"
+                android:paddingEnd="@dimen/detail_margin_left"/>
 
             <!--TODO clean this up. Create dimension values-->
+            <!--TODO add margins-->
         </LinearLayout>
     </ScrollView>
 </layout>
